@@ -17,6 +17,7 @@ var port = process.env.PORT || 3000;
 if (!process.env.MONGODB_URI) {
     console.warn('MONGODB_URI not set. Set it in .env to enable database connection.');
 } else {
+    console.log('Using SRV URI?', String(process.env.MONGODB_URI).startsWith('mongodb+srv://'));
     mongoose.connect(process.env.MONGODB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
